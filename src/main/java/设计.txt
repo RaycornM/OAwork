@@ -1,0 +1,35 @@
+项目分包：
+1.com.tedu.bean 所有的视图bean类
+2.com.tedu.controller 所有的servlet存放，是控制层
+3.com.tedu.service 所有的业务层存放地
+4.com.tedu.mapper 所有的jdbc处理都在这
+5.com.tedu.util 存放数据库链接单例模式
+6.com.tedu.test 用来做service或mapper的测试代码的
+7.com.tedu.filter 过滤器，拦截器存放地
+
+准备好各种jar包
+
+登录功能：
+1.因为写mapper的时候会涉及到javaBean，所以需要定义javabean
+  bean中的属性尽量和数据库表字段的名称一致
+2.写mapper  先写mapper接口，然后写mapper实现类
+	1.定义接口，接口中定义对于某个表基本的操作
+	  现在要写的mapper是专门针对于EmpBean
+	  所以这个接口中定义的方法都是对EmpBean在数据库的表的增删改查
+	2.做接口的实现类，按当前需要的功能进行逐个实现
+	3.编写测试代码，保证在mapper层数据访问没有错误 TestMapper
+3.写业务.service层  先写接口，然后写实现类
+	1.定义接口  定义面向于数据服务，面向业务处理
+	  业务层可能出现一个业务，需要多次mapper的调用
+	2.实现service接口，编写实现类
+	  在实现类中完成mapper的调用
+	3.编写测试类进行测试，确保service下面的功能健全
+4.写控制层，servlet
+	1.session session的大部分使用方法和req一样
+	  区别在于：req是一次完整的请求和响应中才能存在
+	  		   session是存在于服务器端，创建后一直存在，直到过期或者被废除
+5.写页面，在页面上获取数据，并使用java代码进行数据的显示和展现
+
+拦截器
+	拦截器是可以在其他的servlet之前执行的，可以做权限等操作，拦截非法用户等等
+	1.拦截器的实现  首先实现拦截器接口

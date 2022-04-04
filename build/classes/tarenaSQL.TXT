@@ -1,0 +1,27 @@
+﻿drop database if exists tarena;
+
+create database tarena default character set utf8;
+use tarena;
+
+
+drop table if exists dept;
+create table dept(
+	id int(11) primary key auto_increment,
+	dept_name varchar(32),
+	dept_text varchar(2000)
+) engine=innodb default character set utf8;
+insert into dept(dept_name,dept_text) value ('开发','开发');
+insert into dept(dept_name,dept_text) value ('测试','测试');
+insert into dept(dept_name,dept_text) value ('实施','实施');
+
+
+drop table if exists emp;
+create table emp(
+	id int primary key auto_increment,
+	name varchar(32),
+	hire_date date,
+	sal numeric(8,2),
+	pwd varchar(32),
+	dept_id int
+) engine=innodb default character set utf8;
+ insert into emp(name,hire_date,sal,pwd,dept_id) value ( 'senpai','2001-01-01',3900,1234,1);
