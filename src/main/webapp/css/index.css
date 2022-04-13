@@ -1,0 +1,450 @@
+*{
+	padding:0; 
+	margin:0;
+ }
+ body {
+	font-size:62.5%; 
+	background-color:#FFFFFF; 
+	font-family:verdana,arial,sans-serif;
+	} /*Font-size: 1.0em = 10px when browser default size is 16px*/
+.page-container {
+	width:900px; 
+	margin:0px auto; 
+	margin-top:10px; 
+	margin-bottom:10px; 
+	border:solid 1px rgb(150,150,150); 
+	font-size:1.0em;
+	}
+.main {
+	clear:both; 
+	width:900px; 
+	padding-bottom:30px; 
+	background:url(../img/bg_main_withnav.jpg);
+	}
+.main-daohanglan {
+	display:inline;
+	float:left; width:200px; 
+	overflow:visible !important /*Firefox*/; 
+	overflow:hidden ;
+	}
+.main-daohanglan .round-border-topright {
+	width:10px; height:10px; 
+	position:absolute; 
+	z-index:10; 
+	margin:0 0 0 190px; 
+	background:url(../img/bg_corner_topright.gif) no-repeat;
+	}
+.main-daohanglan h1.first {
+	clear:both; 
+	margin:0px; 
+	padding:4px 20px 3px 20px; 
+	background-color:rgb(190,190,190); 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	font-size:160%;
+	}
+/* .main-daohanglan h1 {clear:both; margin:30px 0 20px 0; padding:4px 20px 3px 20px; background:rgb(190,190,190); font-family:"trebuchet ms",arial,sans-serif; color:#FFFFFF; font-weight:bold; font-size:160%;} */
+.main-daohanglan p {
+	clear:both; 
+	margin:0 10px 10px 20px; 
+	color:rgb(80,80,80); 
+	line-height:1.3em; 
+	font-size:120%;
+	text-align:left;
+	}
+.main-login {
+	display:inline; 
+	float:left; 
+	width:640px; 
+	margin:0 0 0 30px; 
+	overflow:visible !important ; 
+	overflow:hidden ;
+	}
+.main-login h1.pagetitle {
+	margin:0 0 0.4em 0; 
+	padding:0 0 2px 2em; 
+	border-bottom:solid 7px rgb(225,225,225); 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:rgb(100,100,100); 
+	font-weight:bold; 
+	font-size:220%;
+	}
+.main-login h1.block {
+	clear:both; 
+	margin:1.0em 0 0em 0; 
+	padding:2px 0 2px 2em; 
+	background:rgb(190,190,190) url(../img/bullet_green.gif) no-repeat 20px 7px; 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	font-size:220%;}
+.main-login h1 {
+	clear:both; 
+	margin:1.0em 0 0.5em 0; 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:rgb(80,80,80); 
+	font-weight:normal; 
+	font-size:210%;
+	}
+.main-login h2 {
+	clear:both; 
+	margin:1.0em 0 0.5em 0; 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:rgb(80,80,80); 
+	font-weight:normal; 
+	font-size:170%;
+	}
+.main-login h3 {
+	clear:both; 
+	margin:-1.0em 0 0.5em 0; 
+	font-family:"trebuchet ms",arial,sans-serif; 
+	color:rgb(125,125,125); 
+	font-weight:normal; 
+	font-size:140%;
+	}
+.main-login h1.side {
+	clear:none;
+	}
+.main-login h2.side {
+	clear:none;
+	}
+.main-login h3.side {
+	clear:none;
+	}
+.loginarea{
+	width:640px; 
+	margin-bottom:10px !important /*Non-IE6*/; 
+	margin-bottom:5px /*IE6*/;
+	}
+.contactform {
+	border-radius: 10px;
+	width:80%; 
+	margin:2.0em auto 0 auto; 
+	padding:50px 10px 50px 10px; 
+	border:solid 1px #C8C8C8; 
+	background-color:#F0F0F0;
+	}
+.contactform fieldset {
+	border-radius: 10px;
+	padding:50px 0 50px 0 !important /*Non-IE6*/; 
+	padding:0 /*IE6*/; 
+	margin:0 0 20px 0; 
+	border:solid 1px #DCDCDC;
+  }
+.contactform fieldset legend {
+	margin:0 0 0 5px !important /*Non-IE*/; 
+	margin:0 0 20px 5px /*IE6*/; 
+	padding:0 2px 0 2px; color:rgb(80,80,80); 
+	font-weight:bold; 
+	font-size:140%;
+	}
+.contactform label.left {
+	float:left;
+	width:100px; 
+	margin:10px 0 20px 10px; 
+	padding:2px; 
+	font-size:120%;
+	}
+.contactform select {
+	border-radius: 10px;
+	width:80px; 
+	padding:2px; 
+	margin:10px 0 20px 10px; 
+	border:solid 1px C8C8C8; 
+	font-family:verdana,arial,sans-serif; 
+	font-size:120%;
+	}
+.contactform input.field {
+	border-radius: 10px;
+	margin:10px 0 20px 10px; 
+	width:275px; 
+	padding:4px; 
+	border:solid 1px #C8C8C8; 
+	font-family:verdana,arial,sans-serif; 
+	font-size:120%;
+	}
+.contactform textarea {
+	border-radius: 10px;
+	width:275px; 
+	padding:2px; 
+	border:solid 1px #C8C8C8; 
+	font-family:verdana,arial,sans-serif; 
+	font-size:120%;
+	}
+.contactform input.button {
+	border-radius: 10px;
+	float:right; 
+	width:9.0em; 
+	margin-right:20px; 
+	padding:1px !important /*Non-IE6*/; 
+	padding:0 /*IE6*/; 
+	background:#2578cb; 
+	border:solid 1px #e9778a; 
+	text-align:center; 
+	-family:verdana,arial,sans-serif; 
+	color:#FFFFFF; 
+	font-size:120%;
+	}
+.contactform input.button:hover {
+	cursor: pointer; 
+	border:solid 1px #e9778a; 
+	background:#ffffff; 
+	color:#e9778a;
+	}
+
+.header {
+	width:900px; 
+	font-family:"trebuchet ms",arial,sans-serif;
+	}
+.header-top {
+	width:900px;
+	height:80px; 
+	background:#F0F0F0 url(../img/bg_head_top.jpg); 
+	overflow:visible !important /*Firefox*/; 
+	overflow:hidden /*IE6*/;
+			}
+.header-middle {
+	width:900px; 
+	height:150px; 
+	background:#E6E6E6 url(../img/head.jpeg); 
+	overflow:visible !important /*Firefox*/; 
+	overflow:hidden /*IE6*/;
+				}
+.header-bottom {
+	width:900px; 
+	height:40px; 
+	background:#FFFFFF url(../img/bg_head_fenge.jpg) repeat-y;
+	}
+
+
+.sitelogo {
+			width:50px; 
+			height:50px; 
+			position:absolute; 
+			z-index:1; 
+			margin:17px 0 0 28px; 
+			background:url(../img/logo2.jpg); 
+		  }
+.sitename {
+			width:300px; 
+			height:45px; 
+			position:absolute; 
+			z-index:1; 
+			margin:20px 0 0 90px; 
+			overflow:visible !important /*Firefox*/; 
+			overflow:hidden /*IE6*/;
+		  }
+.sitename h1 {
+				font-size:240%;
+			 }
+.sitename h2 {
+				margin:-4px 0 0 0; 
+				color:#FFFFFF; 
+				font-size:120%;
+			 }
+.sitename a {
+				text-decoration:none; 
+				color:#FFFFFF;
+			}
+.sitename a:hover {
+	text-decoration:none; 
+	color:rgb(50,50,50);
+}
+
+	.dropdown__title {
+	  background-color: transparent;
+	  border: none;
+	  font-size: 15px;
+	  font-family: "Kozuka Gothic Pro EL"; }
+	nav {
+	  background-color: black;
+	  padding: 0;
+	  position: relative;
+	  top: 0;
+	  height: 40px;
+	  display: grid;
+	  place-items: center;
+	  font-family: "Kozuka Gothic Pro EL";
+	  z-index: 2; }
+	  nav > ul {
+	    position: absolute;
+	    grid-auto-flow: column; }
+	    nav > ul > li {
+	      margin: 0 0.5rem; }
+	      nav > ul > li a,
+	     nav > ul > li .dropdown__title {
+	        text-decoration: none;
+	        text-align: center;
+	        display: inline-block;
+	        color: #fff;
+	        font-size: 15px;
+	        font-family: "Kozuka Gothic Pro EL"; }
+	        nav > ul > li a:focus,
+	        nav > ul > li .dropdown__title:focus {
+	          outline: none; }
+	      nav > ul > li > a,
+	      nav > ul > li .dropdown__title {
+	        padding: 1rem 0.5rem;
+	        border-top: 3px solid transparent;
+	        transition: 280ms all 120ms ease-out; }
+	        nav > ul > li > a:hover, nav > ul > li > a:focus,
+	        nav > ul > li .dropdown__title:hover,
+	        nav > ul > li .dropdown__title:focus {
+	          border-top-color: white;
+	          color: white; }
+	  nav ul {
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	    display: grid; }
+	    nav ul li {
+	      padding: 0; }
+		  
+		  .dropdown {
+		    position: relative; }
+		    .dropdown .dropdown__title {
+		      display: inline-flex;
+		      align-items: center; }
+		      .dropdown .dropdown__title:after {
+		        login: "";
+		        border: 0.35rem solid transparent;
+		        border-top-color: rgba(255, 255, 255, 0.45);
+		        margin-left: 0.25em;
+		        transform: translateY(0.15em); }
+		    .dropdown .dropdown__menu {
+		      position: absolute;
+		      min-width: 15ch;
+		      left: 50%;
+		      top: calc(100% - 0.25rem);
+		      transition: 280ms all 120ms ease-out;
+		      transform: rotateX(-90deg) translateX(-50%);
+		      transform-origin: top center;
+		      visibility: hidden;
+		      opacity: 0.3;
+		      padding: 0.5em 0;
+		      background-color: #fff;
+		      border-radius: 4px;
+		      box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.25);
+		      z-index: 2; }
+		      .dropdown .dropdown__menu a {
+		        color: black;
+		        display: block;
+		        padding: 0.5em;
+		        opacity: 0;
+		        transition: 280ms all 120ms ease-out;
+		        z-index: 1; }
+		        .dropdown .dropdown__menu a:hover {
+		          background-color: rgba(0, 0, 0, 0.15); }
+		        .dropdown .dropdown__menu a:focus {
+		          outline: none;
+		          background-color: rgba(0, 0, 0, 0.25); }
+		    .dropdown:after {
+		      login: "";
+		      border: 0.5rem solid transparent;
+		      border-bottom-color: #fff;
+		      position: absolute;
+		      top: calc(100% - 1.25rem);
+		      left: 50%;
+		      transform: translateX(-50%);
+		      transition: 280ms all 120ms ease-out;
+		      opacity: 0;
+		      will-change: opacity; }
+		    .dropdown:hover .dropdown__title, .dropdown:focus-within .dropdown__title {
+		      border-top-color: wheat; }
+		    .dropdown:hover .dropdown__menu, .dropdown:focus-within .dropdown__menu {
+		      opacity: 1;
+		      transform: rotateX(0) translateX(-50%);
+		      visibility: visible;
+		      z-index: 1; }
+		      .dropdown:hover .dropdown__menu a, .dropdown:focus-within .dropdown__menu a {
+		        opacity: 1; }
+		    .dropdown:hover:after, .dropdown:focus-within:after {
+		      opacity: 1; }			  
+.main img {
+	clear:both; 
+	float: left;
+	margin:3px 10px 7px 0; 
+	padding:1px; 
+	border:1px solid rgb(150,150,150);
+	}
+.main img.center {
+	clear:both; 
+	float:none; 
+	display:block; 
+	margin:0 auto; 
+	padding:1px; 
+	border:1px solid rgb(150,150,150);
+	}
+.main img.right {
+	clear:both; 
+	float:right; 
+	margin:3px 0 7px 10px; 
+	padding:1px; 
+	border:1px solid rgb(150,150,150);
+	}
+
+.main a {
+	color:rgb(70,122,167); 
+	font-weight:bold; 
+	text-decoration:none;
+	}
+.main-login h1 a {
+	color:rgb(70,122,167); 
+	font-weight:normal; 
+	text-decoration:none;
+	}
+.main a:hover {
+	color:rgb(42,90,138); 
+	text-decoration:underline;
+	}
+.main a:visited {
+	color:rgb(42,90,138);
+	}
+
+.main a img {
+	border:solid 1px rgb(150,150,150);
+	}
+.main a:hover img {
+	border:solid 1px rgb(220,220,220);
+	}				  
+.footer {
+	clear:both; 
+	width:900px; 
+	padding:1.0em 0 1.0em 0; 
+	background:#FFFFFF url(../img/bg_foot.jpg) no-repeat; 
+	font-size:1.0em; overflow:visible !important /*Firefox*/;
+	overflow:hidden /*IE6*/;
+	}
+.footer p {
+	line-height:1.3em; 
+	text-align:center; 
+	color:#7D7D7D; 
+	font-weight:bold; 
+	font-size:110%;
+	}
+.footer p.credits {
+	font-weight:normal;
+	}
+.footer a {
+	text-decoration:underline; 
+	color:#7D7D7D;
+	}
+.footer a:hover {
+	text-decoration:none; color:rgb(0,0,0);
+	}
+.footer a:visited {
+	color:rgb(0,0,0);
+	}
+
+.page-container:after, .header:after, .header-breadcrumbs:after, .main:after, .main-daohanglan:after, .main-login:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.loginarea:after, .column2-unit-left:after, .column2-unit-right:after, .column3-unit-left:after, .column3-unit-middle:after, .column3-unit-right:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.footer:after, p:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clear-contentunit {clear:both; width:640px; height:0.1em; border:none; background:rgb(210,210,210); color:rgb(210,210,210);}
+
+@media print {.header-top {width:900px; height:80px; background:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+@media print {.header-breadcrumbs {width:900px; background:transparent;}}
+@media print {.nav2 {float:left; width:900px; border:none; background:rgb(240,240,240); color:rgb(75,75,75); font-size:1.0em; font-size:130%;}} /*Color daohanglan bar normal mode*/
+@media print {.main {clear:both; width:900px; padding-bottom:30px; background:transparent;}}
+@media print {.main-daohanglan {display:inline /*Fix IE floating margin bug*/; float:left; width:199px; border-right:solid 1px rgb(200,200,200); border-bottom:solid 1px rgb(200,200,200); background-color:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE*/;}}
+@media print {.footer {clear:both; width:900px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
