@@ -17,7 +17,7 @@ import java.sql.Statement;
 
 public class MysqlConnection {
 	private static String driver="com.mysql.jdbc.Driver";
-	private static String url="jdbc:mysql://localhost:3306/tarena";
+	private static String url="jdbc:mysql://localhost:3306/oawork";
 	private static String name="root";
 	private static String pwd="hz13316362896dym";
 	

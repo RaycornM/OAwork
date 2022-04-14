@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.tedu.bean.EmpBean;
+import com.tedu.bean.OaRootBean;
 
 @WebFilter("/*")
 public class LoginFilter implements Filter{
@@ -33,22 +33,20 @@ public class LoginFilter implements Filter{
 		System.out.println(path);
 		
 		//在session中进行读取，看看是否登录
-		Object obj = req.getSession().getAttribute("UserBean");
+		Object obj = req.getSession().getAttribute("userBean");
 		if(obj != null) {
-			EmpBean bean = (EmpBean)obj;
+			OaRootBean bean = (OaRootBean)obj;
 			//假设bean里面保持有用户的权限
 			//可以在这里使用权限来判定当前的path是否有权限操作，如果没有直接拦截
 			chain.doFilter(req, response);
-		}else { //  /tarena/index.jsp  /login.do
-			if(path.equals("/tarena/index.jsp") || path.equals("/login.do")) {
-				chain.doFilter(req, response);
-			}else {
-				resp.sendRedirect("/OA/tarena/index.jsp");
-			}
+		}else if(!path.equals("/rimu/index.jsp") && !path.equals("/login.do")) {
+			resp.sendRedirect("/OAwork/rimu/index.jsp");
+		}else {
+			chain.doFilter(req, response);
 		}
+	}
 		
 		//向下继续传递拦截器,拦截器通过
-//		chain.doFilter(req, response);
-	}
-
+		//chain.doFilter(req, response);
 }
+

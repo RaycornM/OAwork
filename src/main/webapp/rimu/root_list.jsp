@@ -1,7 +1,7 @@
-<%@page import="com.tedu.service.EmpServiceImpl"%>
-<%@page import="com.tedu.service.EmpService"%>
+<%@page import="com.tedu.service.RootServiceImpl"%>
+<%@page import="com.tedu.service.RootService"%>
 <%@page import="java.util.List"%>
-<%@page import="com.tedu.bean.EmpBean"%>
+<%@page import="com.tedu.bean.OaRootBean"%>
 <!-- 在java中，除开java.lang包下的以外，都需要导包 -->
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
@@ -32,7 +32,7 @@
 					<nav class="nav" aria-label="Main Navigation">
 						<ul>
 							<li >
-								<a href="index.html">首页</a>
+								<a href="index.jsp">首页</a>
 							</li>
 							<li class="dropdown">
 							    <!-- aria-expanded needs managed with Javascript -->
@@ -41,13 +41,13 @@
 							    </button>
 								<ul class="dropdown__menu" id="sweets-dropdown">
 									<li>
-										<a href="emp_list.html">管理员列表</a>
+										<a href="root_list.jsp">管理员列表</a>
 									</li>
 									<li>
-										<a href="emp_add.html">添加管理员</a>
+										<a href="root_add.html">添加管理员</a>
 									</li>
 									<li>
-										<a href="emp_edit.html">修改管理员</a>
+										<a href="root_edit.html">修改管理员</a>
 									</li>
 								</ul>
 							</li>
@@ -84,19 +84,19 @@
 					</h1>
 					<p>
 						<br/>
-						<a href="index.html">返回系统首页</a>
+						<a href="index.jsp">返回系统首页</a>
 					</p>
 					<p>
 						<br/>
-						<a href="emp_list.html">管理员信息</a>
+						<a href="root_list.jsp">管理员信息</a>
 					</p>
 					<p>
 						<br/>
-						<a href="emp_add.html">添加管理员</a>
+						<a href="root_add.html">添加管理员</a>
 					</p>
 					<p>
 						<br/>
-						<a href="emp_edit.html">修改管理员</a>
+						<a href="root_edit.html">修改管理员</a>
 					</p>
 					<p>
 						<br/>
@@ -137,25 +137,25 @@
 								</th>
 							</tr>
 							<%
-								EmpService service = new EmpServiceImpl();
-								List<EmpBean> list = service.getEmpBeanList();
-								for(EmpBean bean:list){
+							RootService service = new RootServiceImpl();
+							List<OaRootBean> list = service.getRootBeanList();
+							for(OaRootBean bean:list){
 							%>
 							<tr>
 								<th scope="row">
-									<%=bean.getId() %>
+									<%=bean.getUid() %>
 								</th>
 								<td borderColor="#00ff00" bgColor="#00ff00">
-									<%=bean.getName() %>
+									<%=bean.getUname() %>
 								</td>
 								<td>
 									<%=bean.getHire_date() %>
 								</td>
 								<td>
-									<%=bean.getDept_id() %>
+									<%=bean.getPermissions() %>
 								</td>
 								<td>
-									<a href="emp_edit.html">修改</> 
+									<a href="root_edit.html">修改</> 
 								</td>
 							</tr>
 							<%} %>

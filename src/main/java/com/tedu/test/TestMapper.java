@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.tedu.bean.EmpBean;
-import com.tedu.mapper.EmpMapper;
-import com.tedu.mapper.EmpMapperImpl;
+import com.tedu.bean.OaRootBean;
+import com.tedu.mapper.RootMapper;
+import com.tedu.mapper.RootMapperImpl;
 
 /**
  * 本类是专门用于mapper测试的
@@ -15,22 +15,22 @@ import com.tedu.mapper.EmpMapperImpl;
  */
 public class TestMapper {
 	@Test
-	public void selectEmpByNameAndPwd() {
+	public void seleRootByUnameAndUpwd() {
 		//接口引用 = 实体对象
-		EmpMapper mapper = new EmpMapperImpl();
+		RootMapper mapper = new RootMapperImpl();
 		//正确的
-		EmpBean bean = mapper.seleEmpByNameAndPwd("老任", "1234");
+		OaRootBean bean = mapper.seleRootByUnameAndUpwd("senpai", "1234");
 		System.out.println(bean);
 		//错误的
-		bean = mapper.seleEmpByNameAndPwd("114", "514");
+		bean = mapper.seleRootByUnameAndUpwd("114", "514");
 		System.out.println(bean);
 		
 	}
 	@Test
 	public void selectAll() {
-		EmpMapper mapper = new EmpMapperImpl();
-		List<EmpBean> all = mapper.selectAll();
-		for(EmpBean bean:all) {
+		RootMapper mapper = new RootMapperImpl();
+		List<OaRootBean> all = mapper.selectAll();
+		for(OaRootBean bean:all) {
 			System.out.println(bean);
 		}
 	}

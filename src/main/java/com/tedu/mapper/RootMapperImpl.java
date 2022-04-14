@@ -8,49 +8,49 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tedu.bean.EmpBean;
+import com.tedu.bean.OaRootBean;
 import com.tedu.util.MysqlConnection;
 
 //com.tedu.mapper.impl
 
-public class EmpMapperImpl implements EmpMapper{
+public class RootMapperImpl implements RootMapper{
 
 	@Override
-	public int insertEmp(EmpBean bean) {
+	public int insertRoot(OaRootBean bean) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int updateEmp(EmpBean bean) {
+	public int updateRoot(OaRootBean bean) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int deleteEmp(int id) {
+	public int deleteRoot(int uid) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public List<EmpBean> selectAll() {
+	public List<OaRootBean> selectAll() {
 		Connection conn = MysqlConnection.getConnection();
 		Statement sta=null;
 		ResultSet set =null;
-		List<EmpBean> list = new ArrayList<EmpBean>();
-		String sql = "select * from emp limit 0,10";
+		List<OaRootBean> list = new ArrayList<OaRootBean>();
+		String sql = "select * from oa_root limit 0,10";
 		
 		try {
 			sta = conn.createStatement();
 			set = sta.executeQuery(sql);
 			while(set.next()) {
-				EmpBean bean = new EmpBean();
-				bean.setId(set.getInt("id"));
-				bean.setName(set.getString("name"));
-				bean.setPwd(set.getString("pwd"));
-				bean.setSal(set.getDouble("sal"));
+				OaRootBean bean = new OaRootBean();
+				bean.setUid(set.getInt("uid"));
+				bean.setUname(set.getString("uname"));
 				bean.setHire_date(set.getDate("hire_date"));
+				bean.setUpwd(set.getString("upwd"));
+				bean.setPermissions(set.getInt("permissions"));
 				list.add(bean);
 			}
 		} catch (SQLException e) {
@@ -64,31 +64,31 @@ public class EmpMapperImpl implements EmpMapper{
 	}
 
 	@Override
-	public EmpBean selectEmpByName(String name) {
+	public OaRootBean selectRootByUname(String uname) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public EmpBean seleEmpByNameAndPwd(String name, String pwd) {
+	public OaRootBean seleRootByUnameAndUpwd(String uname, String upwd) {
 		Connection conn = MysqlConnection.getConnection();
 		PreparedStatement sta=null;
 		ResultSet set =null;
-		String sql="select * from emp where name=? and pwd=?";
+		String sql="select * from oa_root where uname=? and upwd=?";
 //		就是执行SQL语句，并将查询出来的结果 封装到 UserBean中去
-		EmpBean bean = null;
+		OaRootBean bean = null;
 		try {
 			sta = conn.prepareStatement(sql); //预加载
-			sta.setString(1, name);
-			sta.setString(2, pwd);
+			sta.setString(1, uname);
+			sta.setString(2, upwd);
 			set = sta.executeQuery(); //这里现在不要有sql传入
 			if(set.next()) {
-				bean = new EmpBean();
-				bean.setId(set.getInt("id"));
-				bean.setName(set.getString("name"));
-				bean.setPwd(set.getString("pwd"));
-				bean.setSal(set.getDouble("sal"));
+				bean = new OaRootBean();
+				bean.setUid(set.getInt("uid"));
+				bean.setUname(set.getString("uname"));
 				bean.setHire_date(set.getDate("hire_date"));
+				bean.setUpwd(set.getString("upwd"));
+				bean.setPermissions(set.getInt("permissions"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();

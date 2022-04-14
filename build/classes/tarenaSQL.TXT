@@ -1,27 +1,29 @@
-﻿drop database if exists tarena;
+﻿drop database if exists OAwork;
 
-create database tarena default character set utf8;
-use tarena;
+create database OAwork default character set utf8;
+use OAwork;
 
+drop table if exists oa_book;
+CREATE TABLE `oa_book` (
+  `id` int(11) UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '编号',
+  `isbn` char(13) NOT NULL COMMENT '图书编号',
+  `title` varchar(80) NOT NULL COMMENT '标题（书名）',
+  `author` varchar(80) NOT NULL COMMENT '作者',
+  `press` varchar(50) NOT NULL COMMENT '出版社',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图书信息表';
+INSERT INTO `oa_book` VALUES (1,'9787111213826', 'Java编程思想', '[美] 埃克尔，译者：陈昊鹏 编', '机械工业出版社');
+INSERT INTO `oa_book` VALUES (2,'9787111526285', 'Go程序设计语言（英文版）', '[美] 艾伦A.A.多诺万 等 著', '机械工业出版社 ');
+INSERT INTO `oa_book` VALUES (3,'9787111532644', '架构即未来', '[美] 马丁L.阿伯特（MartinL.Abbott），迈克尔T.费舍尔（MichaelT.Fisher） 著；陈斌 译',  '机械工业出版社');
 
-drop table if exists dept;
-create table dept(
-	id int(11) primary key auto_increment,
-	dept_name varchar(32),
-	dept_text varchar(2000)
-) engine=innodb default character set utf8;
-insert into dept(dept_name,dept_text) value ('开发','开发');
-insert into dept(dept_name,dept_text) value ('测试','测试');
-insert into dept(dept_name,dept_text) value ('实施','实施');
-
-
-drop table if exists emp;
-create table emp(
-	id int primary key auto_increment,
-	name varchar(32),
-	hire_date date,
-	sal numeric(8,2),
-	pwd varchar(32),
-	dept_id int
-) engine=innodb default character set utf8;
- insert into emp(name,hire_date,sal,pwd,dept_id) value ( 'senpai','2001-01-01',3900,1234,1);
+drop table if exists oa_root;
+create table oa_root(
+	`uid` int(11) UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '编号',
+	`uname` varchar(30) NOT NULL COMMENT '用户名',
+	`hire_date` DATE NOT NULL COMMENT '入职日期',
+	`upwd` varchar(30) NOT NULL DEFAULT '000000' COMMENT '密码',
+	`permissions` int(1) NOT NULL DEFAULT '0' COMMENT '权限（1表示管理员）',
+	PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+INSERT INTO oa_root values (1, 'senpai','2001-01-01',1234,1);
+ 
