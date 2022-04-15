@@ -1,20 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="com.tedu.service.RootServiceImpl"%>
-<%@page import="com.tedu.service.RootService"%>
+<%@page import="com.tedu.service.BookServiceImpl"%>
+<%@page import="com.tedu.service.BookService"%>
 <%@page import="java.util.List"%>
-<%@page import="com.tedu.bean.OaRootBean"%>
+<%@page import="com.tedu.bean.OaBookBean"%>
+<!-- 在java中，除开java.lang包下的以外，都需要导包 -->
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<%
-	String path = request.getContextPath(); //获取上下文路径
-	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/index.css" />
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/list.css" />
-<title>日暮图书管理系统|登录</title>
+<title>日暮图书管理系统|管理员列表</title>
 </head>
 <body>
 		<div class="page-container">
@@ -77,11 +74,9 @@
 					</br>
 				</div>
 			</div>
-		
-			<div class="main">
-		
+
+<div class="main">
 				<div class="main-daohanglan">
-		
 					<div class="round-border-topright"></div>
 					<h1 class="first">
 						菜单
@@ -89,55 +84,101 @@
 					</h1>
 					<p>
 						<br/>
-						<a href="index.jsp">系统首页</a>
+						<a href="index.jsp">返回系统首页</a>
 					</p>
-		
+					<p>
+						<br/>
+						<a href="root_list.jsp">管理员信息</a>
+					</p>
+					<p>
+						<br/>
+						<a href="root_add.jsp">添加管理员</a>
+					</p>
+					<p>
+						<br/>
+						<a href="root_edit.jsp">修改管理员</a>
+					</p>
+					<p>
+						<br/>
+						<a href="book_list.jsp">所有图书信息</a>
+					</p>
+					<p>
+						<br/>
+						<a href="book_add.jsp">添加图书</a>
+					</p>
+					<p>
+						<br/>
+						<a href="book_edit.jsp">修改图书</a>
+					</p>
 				</div>
-			
+
 				<div class="main-login">
-			
+
 					<h1 class="pagetitle">
-								日暮图书管理系统
+						修改员工信息
 					</h1>
-			
+
 					<div class="loginarea">
 						<div class="contactform">
-							<form method="post" action="/OAwork/login.do">
+							<form method="post" action="index.jsp">
+								<input type="hidden" name="id" value="" />
 								<fieldset>
 									<legend>
-										&nbsp;用户登录&nbsp;
+										&nbsp;基本信息&nbsp;
 									</legend>
 									<p>
-										<label for="uname" class="left">
-											用户名称
+										<label for="name" class="left">
+											姓名:
 										</label>
-										<input type="text" name="uname" id="uname" class="field"
+										<input type="text" name="name" id="name" class="field"
 											value="" tabindex="1" />
 									</p>
+								
 									<p>
-										<label for="upwd" class="left">
-											密码
+										<label for="pre" class="left">
+											权限:
 										</label>
-										<input type="text" name="upwd" id="upwd" class="field"
-											value="" tabindex="1" />
+										<SELECT id="uid">
+										<OPTION value=NULL selected>
+											无
+										</OPTION>
+										<OPTION value=True>
+											有
+										</OPTION>
+									</SELECT>
+									</p>
+
+									<p>
+										<label for="hire_date" class="left">
+											入职时间:
+										</label>
+										<input type="text" name="hireDate" id="hire_date"
+											class="field" value="" tabindex="1" />
+									</p>
+									<p>
+										<label for="pwd" class="left">
+											密码:
+										</label>
+										<input type="text" name="pwd" id="pwd"
+											class="field" value="" tabindex="1" />
+									</p>
+									<p>
+										<label for="pwds" class="left">
+											重复密码:
+										</label>
+										<input type="text" name="pwds" id="pwds"
+											class="field" value="" tabindex="1" />
 									</p>
 									<p>
 										<input type="submit" name="submit" id="submit" class="button"
-											value="登录" tabindex="6" />
-									</p>
-									<p> 
-										<%
-											Object obj = request.getAttribute("loginErr");
-											//如果loginErr没有，那么obj = null
-											obj = (obj == null) ? "" : obj;
-										%>
-										<%=obj.toString() %>
+											value="保存" tabindex="6" />
 									</p>
 								</fieldset>
 
 							</form>
 						</div>
 					</div>
+
 				</div>
 			</div>
 			<div class="footer">
@@ -146,5 +187,10 @@
 				</p>
 				<p class="credits"></p>
 			</div>
+		</div>
+
 	</body>
 </html>
+
+
+

@@ -48,7 +48,6 @@ public class RootMapperImpl implements RootMapper{
 				OaRootBean bean = new OaRootBean();
 				bean.setUid(set.getInt("uid"));
 				bean.setUname(set.getString("uname"));
-				bean.setHire_date(set.getDate("hire_date"));
 				bean.setUpwd(set.getString("upwd"));
 				bean.setPermissions(set.getInt("permissions"));
 				list.add(bean);
@@ -86,7 +85,6 @@ public class RootMapperImpl implements RootMapper{
 				bean = new OaRootBean();
 				bean.setUid(set.getInt("uid"));
 				bean.setUname(set.getString("uname"));
-				bean.setHire_date(set.getDate("hire_date"));
 				bean.setUpwd(set.getString("upwd"));
 				bean.setPermissions(set.getInt("permissions"));
 			}

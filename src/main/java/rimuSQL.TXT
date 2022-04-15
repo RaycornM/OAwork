@@ -20,10 +20,9 @@ drop table if exists oa_root;
 create table oa_root(
 	`uid` int(11) UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '编号',
 	`uname` varchar(30) NOT NULL COMMENT '用户名',
-	`hire_date` DATE NOT NULL COMMENT '入职日期',
 	`upwd` varchar(30) NOT NULL DEFAULT '000000' COMMENT '密码',
 	`permissions` int(1) NOT NULL DEFAULT '0' COMMENT '权限（1表示管理员）',
 	PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
-INSERT INTO oa_root values (1, 'senpai','2001-01-01',1234,1);
+INSERT INTO oa_root values (1, 'senpai',1234,1);
  

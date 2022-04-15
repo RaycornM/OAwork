@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.tedu.bean.OaRootBean;
+import com.tedu.service.BookService;
+import com.tedu.service.BookServiceImpl;
 import com.tedu.service.RootService;
 import com.tedu.service.RootServiceImpl;
 
@@ -17,6 +19,7 @@ import com.tedu.service.RootServiceImpl;
 public class LoginController extends HttpServlet{
 	
 	private RootService rootService = new RootServiceImpl();
+	private BookService bookService = new BookServiceImpl();
 	 
 	public LoginController() {
 	    

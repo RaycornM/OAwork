@@ -44,10 +44,10 @@
 										<a href="root_list.jsp">管理员列表</a>
 									</li>
 									<li>
-										<a href="root_add.html">添加管理员</a>
+										<a href="root_add.jsp">添加管理员</a>
 									</li>
 									<li>
-										<a href="root_edit.html">修改管理员</a>
+										<a href="root_edit.jsp">修改管理员</a>
 									</li>
 								</ul>
 							</li>
@@ -57,13 +57,13 @@
 							    </button>
 								<ul class="dropdown__menu" id="sweets-dropdown">
 									<li>
-										<a href="dept_list.html">图书列表</a>
+										<a href="book_list.jsp">图书列表</a>
 									</li>
 									<li>
-										<a href="dept_add.html">添加图书</a>
+										<a href="book_add.jsp">添加图书</a>
 									</li>
 									<li>
-										<a href="dept_edit.html">修改图书</a>
+										<a href="book_edit.jsp">修改图书</a>
 									</li>
 								</ul>
 							</li>
@@ -92,23 +92,23 @@
 					</p>
 					<p>
 						<br/>
-						<a href="root_add.html">添加管理员</a>
+						<a href="root_add.jsp">添加管理员</a>
 					</p>
 					<p>
 						<br/>
-						<a href="root_edit.html">修改管理员</a>
+						<a href="root_edit.jsp">修改管理员</a>
 					</p>
 					<p>
 						<br/>
-						<a href="dept_list.html">所有图书信息</a>
+						<a href="book_list.jsp">所有图书信息</a>
 					</p>
 					<p>
 						<br/>
-						<a href="dept_add.html">添加图书</a>
+						<a href="book_add.jsp">添加图书</a>
 					</p>
 					<p>
 						<br/>
-						<a href="dept_edit.html">修改图书</a>
+						<a href="book_edit.jsp">修改图书</a>
 					</p>
 				</div>
 				
@@ -125,9 +125,6 @@
 								</th>
 								<th class="top" scope="col">
 									姓名
-								</th>
-								<th class="top" scope="col">
-									入职时间
 								</th>
 								<th class="top" scope="col">
 									权限
@@ -149,13 +146,10 @@
 									<%=bean.getUname() %>
 								</td>
 								<td>
-									<%=bean.getHire_date() %>
-								</td>
-								<td>
 									<%=bean.getPermissions() %>
 								</td>
 								<td>
-									<a href="root_edit.html">修改</> 
+									<a href="root_edit.jsp">修改</> 
 								</td>
 							</tr>
 							<%} %>

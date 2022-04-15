@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.tedu.bean.OaBookBean;
 import com.tedu.bean.OaRootBean;
+import com.tedu.mapper.BookMapper;
+import com.tedu.mapper.BookMapperImpl;
 import com.tedu.mapper.RootMapper;
 import com.tedu.mapper.RootMapperImpl;
 
@@ -27,10 +30,18 @@ public class TestMapper {
 		
 	}
 	@Test
-	public void selectAll() {
+	public void selectAllRoot() {
 		RootMapper mapper = new RootMapperImpl();
 		List<OaRootBean> all = mapper.selectAll();
 		for(OaRootBean bean:all) {
+			System.out.println(bean);
+		}
+	}
+	@Test
+	public void selectAllBook() {
+		BookMapper mapper = new BookMapperImpl();
+		List<OaBookBean> all = mapper.selectAll();
+		for(OaBookBean bean:all) {
 			System.out.println(bean);
 		}
 	}
